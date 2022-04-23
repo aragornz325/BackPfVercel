@@ -1,4 +1,4 @@
-const pg = require('pg')
+const {pg} = require('pg')
 const { Sequelize } = require('sequelize');
 const { config } = require('../config/config');
 const setupModels = require('../db/models/index')
