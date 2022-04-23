@@ -1,3 +1,4 @@
+const pg = require('pg')
 const { Sequelize } = require('sequelize');
 const { config } = require('../config/config');
 const setupModels = require('../db/models/index')
@@ -10,6 +11,7 @@ const PASSWORD = encodeURIComponent(config.dbPassword);
 // const URI = 'postgres://dbmaljaxgxxrba:c5b9e2743cf628b388e5d24ceb7d0cc87069dbaacd9ca113e4a3fb3582b4ebed@ec2-44-199-143-43.compute-1.amazonaws.com:5432/d2cvc1so8ve8q8' /* db en heroku, sin uso */
 const sequelize = new Sequelize(URI, {
   dialect: 'postgres',
+  dialectModule: pg,
   logging: false
 });
 
